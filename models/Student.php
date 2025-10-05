@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../config/db.php';
 
-class Student{
+class student{
     private $pdo;
 
     public function __construct(){
@@ -31,6 +31,10 @@ class Student{
     public function delete($id){
         $stmt=$this->pdo->prepare("DELETE FROM student WHERE id = ?");
         return $stmt->execute([$id]);
+    }
+    public function countStudents() {
+        $stmt = $this->pdo->query("SELECT COUNT(*) FROM students");
+        return $stmt->fetchColumn();
     }
     public function getCourses($student_id){
         $stmt=$this->pdo->prepare("SELECT c.* FROM courses c JOIN enrollments e ON c.id = e.course_id WHERE e.student_id = ?");
