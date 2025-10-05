@@ -1,6 +1,6 @@
 <?php
 require_once 'includes/auth.php';
-
+//itk
 // If already logged in, redirect to dashboard
 if (isLoggedIn()) {
     header('Location: dashboard.php');
@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
+
 <body class="login-body">
     <div class="container">
         <div class="row justify-content-center align-items-center min-vh-100">
@@ -49,10 +51,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>
 
                         <?php if ($error): ?>
-                            <div class="alert alert-danger" role="alert">
-                                <i class="fas fa-exclamation-triangle me-2"></i>
-                                <?php echo htmlspecialchars($error); ?>
-                            </div>
+                        <div class="alert alert-danger" role="alert">
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            <?php echo htmlspecialchars($error); ?>
+                        </div>
                         <?php endif; ?>
 
                         <form method="POST" action="">
@@ -60,8 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <label for="username" class="form-label">
                                     <i class="fas fa-user me-2"></i>Tên đăng nhập
                                 </label>
-                                <input type="text" class="form-control" id="username" name="username" 
-                                       value="<?php echo htmlspecialchars($username ?? ''); ?>" required>
+                                <input type="text" class="form-control" id="username" name="username"
+                                    value="<?php echo htmlspecialchars($username ?? ''); ?>" required>
                             </div>
 
                             <div class="mb-4">
@@ -92,4 +94,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
