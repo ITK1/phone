@@ -30,19 +30,21 @@ html {
   line-height: 35px;
   padding: 0 25px;
 }
-.shownav {
-  color: white;
-}
+
 .nav li:hover {
   background-color: #333;
 }
+nav > .navcon > ul > li {
+  color: aliceblue;
+}
 .navcon {
   position: absolute;
-  background-color: rgb(12, 12, 12);
+  background-color: rgb(253, 253, 253);
   box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
   /* margin-top: 6px; */
   min-height: 35px;
   display: none;
+  padding: 0px 10px 0px 10px;
 }
 .navcon ul li a {
   display: block;
