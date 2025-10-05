@@ -14,19 +14,28 @@ require_once 'config/db.php';
     <link rel="stylesheet" href="assets/style.css" />
   </head>
   <body>
-    <div id="header">
-      <div class="nav">
-        <ul>
-          <li><a href=""></a>Trang chủ</li>
-          <li><a href=""></a>Giỏ Hàng</li>
-          <li><a href=""></a>Lịch trình</li>
-          <li><a href=""></a>Live</li>
-          <li><a href=""></a>Cài Đặt</li>
-        </ul>
+    <div id="main">
+      <div id="header">
+        <div class="nav">
+          <ul>
+            <li><a href=""></a>Trang chủ</li>
+            <li class="shownav">
+              <ul class="navcon">
+                <li><a href="">Toeic</a></li>
+                <li><a href="">Ai eo</a></li>
+                <li><a href=""></a>Anh Van</li>
+              </ul>
+            </li>
+            <li><a href=""></a>Thời khóa biểu</li>
+            <li><a href=""></a>Lịch dạy</li>
+            <li><a href=""></a>Thông tin</li>
+            <li><a href="./student-managementt/index.php">web</a></li>
+          </ul>
+        </div>
       </div>
+      <div id="slider"></div>
+      <div id="container"></div>
+      <class id="footer"></class>
     </div>
-    <div id="slider"></div>
-    <div id="container"></div>
-    <class id="footer"></class>
   </body>
 </html>
