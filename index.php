@@ -3,6 +3,8 @@
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/models/student.php';
 require_once __DIR__ .'/models/course.php';
+require_once __DIR__. './include/header.php';
+
 
 $studentModel = new student();
 $courseModel = new Course();
@@ -21,28 +23,15 @@ $totalCourses = $courseModel->countCourses();
 </head>
 <body>
 
-<div id="main">
-      <div id="header">
-        <div class="nav">
-          <ul>
-            <li><a href="index.php"></a>Trang chủ</li>
-            <li class="shownav">
-              <a href="courses.php">Khóa học</a>
-              <ul class="navcon">
-                <li><a href="students.php">Sinh Viên</a></li>
-                <li><a href="">Ai eo</a></li>
-                <li><a href=""></a>Anh Van</li>
-              </ul>
-            </li>
-            <li><a href=""></a>Thời khóa biểu</li>
-            <li><a href=""></a>Lịch dạy</li>
-            <li><a href=""></a>Thông tin</li>
-            <li><a href="./student-managementt/index.php">web</a></li>
-          </ul>
-        </div>
-      </div>
-
-
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand text-white" href="index.php">📚 Quản lý sinh viên</a>
+    <div>
+      <a href="students.php" class="nav-link d-inline text-white">👨‍🎓 Sinh viên</a>
+      <a href="courses.php" class="nav-link d-inline text-white">📘 Khóa học</a>
+    </div>
+  </div>
+</nav>
 
 <div id="container">
         <h1>Quản lý Sinh Viên</h1>
