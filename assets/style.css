@@ -1,4 +1,29 @@
+#header {
+  background-color: rgb(93, 106, 7);
+}
 .nav > ul {
   display: flex;
-  text-decoration-color: ;
+  text-decoration: none;
+  list-style: none;
+}
+.nav > ul > li {
+  /* padding: 8px; */
+  color: antiquewhite;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  line-height: 35px;
+  padding: 0 25px;
+}
+.shownav {
+  line-height: 38px;
+}
+.navcon {
+  /* display: none; */
+  position: absolute;
+  background-color: rgb(110, 233, 2);
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
+}
+.navcon li a {
+  display: block;
 }
