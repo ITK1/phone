@@ -61,3 +61,32 @@ nav > .navcon > ul > li {
 #header ul li:hover > .navcon {
   display: block;
 }
+
+/* Container */
+#container-adm > h1 {
+  color: white;
+  background-color: #54787f;
+  padding: 4px 0px 4px 9px;
+}
+#container-adm > .box-tong {
+  display: block;
+  display: flex;
+}
+.box-show {
+  height: 100px;
+  width: 400px;
+  padding: 20px;
+  margin: 15px;
+  background: linear-gradient(135deg, #a18cd1, #6f86d6);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.title-text {
+  color: rgb(249, 250, 251);
+  font-size: 40x;
+  margin-top: -11px;
+}
+.text-number {
+  color: white;
+  justify-content: center;
+  font-size: 50px;
+}
