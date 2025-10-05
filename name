@@ -1,0 +1,33 @@
+student-management/
+│
+├── index.php                # Trang chủ / đăng nhập
+├── dashboard.php            # Trang chính sau đăng nhập
+│
+├── admin/
+│   ├── students.php         # Quản lý sinh viên
+│   ├── courses.php          # Quản lý khóa học
+│   ├── scores.php           # Quản lý điểm
+│   ├── add_student.php
+│   ├── edit_student.php
+│   └── delete_student.php
+│
+├── student/
+│   ├── profile.php          # Thông tin sinh viên
+│   ├── courses.php          # Khóa học của sinh viên
+│   └── scores.php           # Điểm của sinh viên
+│
+├── includes/
+│   ├── db.php               # Kết nối CSDL
+│   ├── auth.php             # Kiểm tra đăng nhập
+│   ├── header.php           # Thanh menu, giao diện
+│   └── footer.php
+│
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── main.js
+│   └── images/
+│
+└── database/
+    └── student_db.sql       # File CSDL
