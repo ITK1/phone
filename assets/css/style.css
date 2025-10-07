@@ -1,0 +1,62 @@
+/* ===============================
+   🎨 STYLE CHUNG CHO TOÀN DỰ ÁN
+   =============================== */
+
+   body {
+    background-color: #f6f8fa;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+.navbar {
+    background-color: #007bff;
+}
+
+.navbar a {
+    color: #fff !important;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.navbar a:hover {
+    opacity: 0.8;
+}
+
+.card {
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.btn {
+    border-radius: 0.5rem;
+}
+
+.table {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.table th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.container {
+    max-width: 1100px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    margin-top: 30px;
+    border-radius: 8px 8px 0 0;
+}
