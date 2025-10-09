@@ -1,8 +1,6 @@
 <?php
 
 ?>
-
- 
     <div id="main">
       <div id="header">
         <div class="nav">

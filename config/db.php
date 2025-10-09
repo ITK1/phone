@@ -1,4 +1,4 @@
-<?php
+ <?php
 class database{
     private $host ="localhost";
     private $db_name = "student_mgmt";

@@ -33,22 +33,26 @@ $totalCourses = $courseModel->countCourses();
   </div>
 </nav>
 
-<div id="container">
+<div id="container-adm">
         <h1>Quản lý Sinh Viên</h1>
+        <div class="box-tong">
+          <div class="box-show">
+            <div class="title-text">TỔNG SỐ SINH VIÊN</div>
+            <h2 class="text-number">
+              <?php echo $totalStudents; ?>
+              200
+            </h2>
+          </div>
 
-        <div class="stat-box student">
-          <div class="stat-title">Tổng số sinh viên</div>
-          <h2 class="stat-number text-primary">
-            <?php echo $totalStudents; ?>
-          </h2>
+          <div class="box-show">
+            <div class="title-text">TỔNG SỐ KHÁO HỌC</div>
+            <h2 class="text-number">
+              <?php echo $totalCourses; ?>
+              100
+            </h2>
+          </div>
         </div>
-
-        <div class="stat-box course">
-          <div class="stat-title">Tổng số khóa học</div>
-          <h2 class="stat-number text-success">
-            <?php echo $totalCourses; ?>
-          </h2>
-        </div>
+      </div>
 
 </body>
 </html>
