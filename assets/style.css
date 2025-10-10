@@ -6,8 +6,28 @@
 html {
   font-family: Arial, Helvetica, sans-serif;
 }
+#header .nav-login {
+  height: 46px;
+  background-color: #00b348;
+  line-height: 46px;
+}
+#header .nav-login li {
+  display: inline-block;
+  float: right;
+  padding: 0px 8px;
+  margin-right: 5px;
+}
+#header .nav-login li a:hover {
+  color: #03451d;
+}
+#header #hotline {
+  float: left;
+  margin-left: 10px;
+  color: white;
+}
+
 #header {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(17, 81, 57);
 }
 #header li a {
   text-decoration: none;
@@ -32,14 +52,15 @@ html {
 }
 
 .nav li:hover {
-  background-color: #333;
+  background-color: #367e56;
 }
 nav > .navcon > ul > li {
   color: aliceblue;
 }
+
 .navcon {
   position: absolute;
-  background-color: rgb(253, 253, 253);
+  background-color: #333;
   box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
   /* margin-top: 6px; */
   min-height: 35px;
@@ -48,18 +69,24 @@ nav > .navcon > ul > li {
 }
 .navcon ul li a {
   display: block;
+  width: 100%;
+}
+.shownav .navcon li:hover {
+  background-color: #03451d;
+  display: block;
 }
 .shownav ul li {
   text-decoration: none;
   list-style: none;
+}
+
+#header ul li:hover > .navcon {
   display: block;
 }
 
-.navcon li a {
-  line-height: 38px;
-}
-#header ul li:hover > .navcon {
-  display: block;
+/* slider */
+#slider {
+  background-image: url("../img/vietnam_00949.jpg");
 }
 
 /* Container */
