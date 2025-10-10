@@ -1,7 +1,7 @@
 <?php 
  class data{
     private $host = "localhost";
-    private $db = "student_magmt";
+    private $db = "student_mgmt";
     private $name = "root";
     private $pass = "";
     
