@@ -1,22 +1,28 @@
- <?php
-class database{
-    private $host ="localhost";
-    private $db_name = "student_mgmt";
-    private $username = "root";
+<?php 
+ class data{
+    private $host = "localhost";
+    private $db = "student_magmt";
+    private $name = "root";
     private $pass = "";
-    private static $pdo = null;
-
+    
+    public $conn;
+    
     public function connect(){
-        if(!self::$pdo){
-            try{
-                $dsn ="mysql:host={$this->host};dbname={$this->db_name};charset=utf8mb4";
-                self::$pdo = new PDO($dsn, $this->username,$this->pass);
-                self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            } catch(PDOException $e){
-                die('Connection failed:'. $e->getMessage());
-            }
-        }
-        return self::$pdo;
-    }
-}
+      $this->conn=null;
+      try{
+         $this->conn = new PDO(
+            "mysql:host=$this->host;dbname=$this->db;charset=utf8mb4",
+            $this->name,
+            $this->pass
+         );
+         $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      }catch(PDOException $e){
+         echo "connect failed:" . $e->getMessage();
+      }
+      return $this->conn;
+
+     }
+    
+ }
+
 ?>
