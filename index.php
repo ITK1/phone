@@ -5,8 +5,8 @@ require_once __DIR__ . '/models/Course.php';
 $studentModel = new Student();
 $courseModel = new Course();
 
-$totalStudents = $studentModel->countStudents();
-$totalCourses = $courseModel->countCourses();
+$totalStudents = $studentModel->countcStudents();
+$totalCourses = $courseModel->countcourses();
 
 include __DIR__ . '/views/header.php';
 ?>
@@ -59,3 +59,5 @@ include __DIR__ . '/views/header.php';
     </div>
 
     <?php include __DIR__ . '/views/footer.php'; ?>
+
+    

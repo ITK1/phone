@@ -1,6 +1,7 @@
 <?php
 
 ?>
+<link rel="stylesheet" href="../assets/css/style.css">
     <div id="main">
       <div id="header">
         <div class="nav">
@@ -22,4 +23,6 @@
         </div>
       </div>
       <div></div>
+
+      <div id="test"></div>
 

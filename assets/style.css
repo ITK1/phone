@@ -85,8 +85,9 @@ nav > .navcon > ul > li {
 }
 
 /* slider */
-#slider {
-  background-image: url("../img/vietnam_00949.jpg");
+#slider-id {
+  height: 100%;
+  background-image: url("../img/hinh.jpg") no-repeat center center fixed;
 }
 
 /* Container */
