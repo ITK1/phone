@@ -64,3 +64,165 @@ footer {
 #test {
   background: url("../img/hinh.jpg");
 }
+
+/* CSS CHO ADMIN */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+#main-adm {
+  height: 120vh;
+  background-color: black;
+}
+#header-adm {
+  line-height: 47px;
+  background-color: rgb(13, 13, 239);
+  height: 50px;
+}
+#header-adm .nav li {
+  display: inline-block;
+  float: right;
+  padding: 0px 8px;
+  margin-right: 5px;
+}
+#header-adm #header-text {
+  float: left;
+  color: white;
+  margin-left: 40px;
+  font-size: 25px;
+}
+
+#header-adm .nav li a {
+  color: white;
+  text-decoration: none;
+  list-style: none;
+}
+#header-adm .nav li a:hover {
+  color: salmon;
+}
+
+#gioithieu {
+  color: white;
+  margin-top: 40px;
+  margin-left: 100px;
+}
+#gioithieu .h1 {
+  font-size: 50px;
+}
+#gioithieu h4 {
+  font-size: 20px;
+}
+
+#buton-solieu {
+  margin-top: 30px;
+  display: flex;
+  color: white;
+}
+#buton-solieu .content-xanh {
+  width: 330px;
+  height: 115px;
+  border-radius: 0.25rem;
+  background-color: rgb(13, 13, 239);
+  margin: 15px;
+  margin-left: 35px;
+}
+#buton-solieu .content-xanhla {
+  width: 330px;
+  height: 115px;
+  border-radius: 0.25rem;
+  background-color: rgb(2, 116, 5);
+  margin: 15px;
+}
+#buton-solieu .content-xanhtroi {
+  width: 330px;
+  height: 115px;
+  border-radius: 0.25rem;
+  background-color: rgb(5, 170, 196);
+  margin: 15px;
+}
+#buton-solieu .content-vang {
+  width: 330px;
+  height: 115px;
+  border-radius: 0.25rem;
+  background-color: rgb(198, 246, 6);
+  margin: 15px;
+}
+#buton-solieu .number {
+  margin-top: 20px;
+  margin-left: 13px;
+  font-size: 30px;
+}
+#buton-solieu .button-name {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: 13px;
+}
+#student-box {
+  width: 670px;
+  margin-top: 30px;
+  margin-left: 45px;
+  color: white;
+}
+#student-box .student-header {
+  width: 664px;
+  height: 40px;
+  background-color: rgb(13, 13, 239);
+  border-radius: 8px;
+  font-weight: bold;
+}
+#student-box .student-text {
+  padding-top: 11px;
+  margin-left: 15px;
+}
+#student-box .student-list {
+  padding: 15px;
+}
+#student-box .student-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #2b2b2b;
+  padding-bottom: 8px;
+}
+#student-box .box-list:last-child {
+  border-bottom: none;
+}
+#student-box .box-list {
+  display: flex;
+  flex-direction: column;
+}
+#student-box .student-name {
+  font-weight: bold;
+  font-size: 16px;
+}
+#student-box .student-id {
+  color: #aaa;
+  font-size: 13px;
+}
+#student-box .date {
+  background-color: #0d6efd;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 13px;
+}
+#student-box .list-header {
+  width: 664px;
+  height: 40px;
+  background-color: rgb(2, 116, 5);
+  border-radius: 8px;
+  font-weight: bold;
+}
+#student-box .date-kh {
+  background-color: rgb(2, 116, 5);
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 13px;
+}
+#main-list {
+  display: flex;
+}

@@ -1,20 +1,131 @@
-<div id="container-adm">
-  <h1>Quản lý Sinh Viên</h1>
-  <div class="box-tong">
-    <div class="box-show">
-      <div class="title-text">TỔNG SỐ SINH VIÊN</div>
-      <h2 class="text-number">
-        <?php echo $totalStudents; ?>
-        200
-      </h2>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="main-adm">
+      <div id="header-adm">
+        <div class="nav">
+          <ul>
+            <li id="header-text">Quản lý sinh viên</li>
+            <li><a href="">Trang chủ</a></li>
+            <li><a href="">Sinh viên</a></li>
+            <li><a href="">Khóa học</a></li>
+            <li><a href="">Đăng ký</a></li>
+          </ul>
+        </div>
+      </div>
 
-    <div class="box-show">
-      <div class="title-text">TỔNG SỐ KHÁO HỌC</div>
-      <h2 class="text-number">
-        <?php echo $totalCourses; ?>
-        100
-      </h2>
+      <div id="gioithieu">
+        <h1 class="h1">Chào mừng đến với hệ thống quản lý sinh viên</h1>
+        <h4>Quản lý sinh viên một cách dễ dàng và hiệu quả</h4>
+      </div>
+
+      <div id="buton-solieu">
+        <div class="content-xanh">
+          <div class="number">3</div>
+          <div class="button-name">Tổng sinh viên</div>
+        </div>
+        <div class="content-xanhla">
+          <div class="number">4</div>
+          <div class="button-name">Tổng khóa học</div>
+        </div>
+        <div class="content-xanhtroi">
+          <div class="number">6</div>
+          <div class="button-name">Đăng ký hoạt động</div>
+        </div>
+        <div class="content-vang">
+          <div class="number">3</div>
+          <div class="button-name">Tín chỉ trung bình</div>
+        </div>
+      </div>
+      <div id="main-list">
+        <div id="student-box">
+          <div class="student-header">
+            <div class="student-text">Sinh viên mới nhất</div>
+          </div>
+          <div class="student-list">
+            <div class="box-list">
+              <div class="student-name">Phan Lê Bá Khang</div>
+              <div class="student-id">SV001</div>
+            </div>
+            <div class="date">23/10/2025</div>
+          </div>
+          <div class="student-list">
+            <div class="box-list">
+              <div class="student-name">Phan Văn Bao</div>
+              <div class="student-id">sv002</div>
+            </div>
+            <div class="date">23/10/2025</div>
+          </div>
+          <div class="student-list">
+            <div class="box-list">
+              <div class="student-name">Phạm Trung Can</div>
+              <div class="student-id">SV003</div>
+            </div>
+            <div class="date">23/10/2025</div>
+          </div>
+          <div class="student-list">
+            <div class="box-list">
+              <div class="student-name">Châu Trí Bền</div>
+              <div class="student-id">SV004</div>
+            </div>
+            <div class="date">23/10/2025</div>
+          </div>
+          <div class="student-list">
+            <div class="box-list">
+              <div class="student-name">Châu Trí Bền</div>
+              <div class="student-id">SV004</div>
+            </div>
+            <div class="date">23/10/2025</div>
+          </div>
+        </div>
+
+        <div id="student-box">
+          <div class="list-header">
+            <div class="student-text">Khóa học mới nhất</div>
+          </div>
+          <div class="student-list">
+            <div class="box-list">
+              <div class="student-name">Phan Lê Bá Khang</div>
+              <div class="student-id">SV001</div>
+            </div>
+            <div class="date-kh">23/10/2025</div>
+          </div>
+          <div class="student-list">
+            <div class="box-list">
+              <div class="student-name">Phan Văn Bao</div>
+              <div class="student-id">sv002</div>
+            </div>
+            <div class="date-kh">23/10/2025</div>
+          </div>
+          <div class="student-list">
+            <div class="box-list">
+              <div class="student-name">Phạm Trung Can</div>
+              <div class="student-id">SV003</div>
+            </div>
+            <div class="date-kh">23/10/2025</div>
+          </div>
+          <div class="student-list">
+            <div class="box-list">
+              <div class="student-name">Châu Trí Bền</div>
+              <div class="student-id">SV004</div>
+            </div>
+            <div class="date-kh">23/10/2025</div>
+          </div>
+          <div class="student-list">
+            <div class="box-list">
+              <div class="student-name">Châu Trí Bền</div>
+              <div class="student-id">SV004</div>
+            </div>
+            <div class="date-kh">23/10/2025</div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  </body>
+</html>

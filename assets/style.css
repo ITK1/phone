@@ -85,9 +85,24 @@ nav > .navcon > ul > li {
 }
 
 /* slider */
-#slider-id {
-  height: 100%;
-  background-image: url("../img/hinh.jpg") no-repeat center center fixed;
+#slider {
+  width: 100%;
+  height: 618px;
+  background-size: 100%;
+  background: url("./img/hinh2.jpg") no-repeat;
+}
+/* content */
+
+#content {
+  height: 100px;
+  background-color: #00b348;
+  color: white;
+}
+#content .content-siler {
+  align-items: center;
+}
+#content .content-item {
+  display: inline-block;
 }
 
 /* Container */
