@@ -17,9 +17,9 @@ class Student{
     }
 
     public function getById($id){
-$stmt = $this->conn->prepare(" SELECT * FROM $this-> table WHERE id=?");
-$stmt->execute([$id]);
-return $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt = $this->conn->prepare(" SELECT * FROM $this-> table WHERE id=?");
+        $stmt->execute([$id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     public function add($name,$email,$dob){
