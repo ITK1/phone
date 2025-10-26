@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS user (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- 3. THÊM TÀI KHOẢN ADMIN MẶC ĐỊNH
+-- 3. THÊM TÀI KHOẢN ADMIN MẶC ĐỊNH///
 -- Mật khẩu: 'admin123' (Hãy nhớ HASH mật khẩu này trong code PHP của bạn trước khi INSERT)
 -- Ví dụ: Giả sử 'admin123' sau khi hash là '$2y$10$abcdefghijklmnopqrstuvwxyz...'
 INSERT INTO user (username, password, role, is_approved) VALUES 
