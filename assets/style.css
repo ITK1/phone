@@ -6,6 +6,10 @@
 html {
   font-family: Arial, Helvetica, sans-serif;
 }
+#main {
+  background-color: #c4d7c4;
+  height: 2000px;
+}
 #header .nav-login {
   height: 46px;
   background-color: #00b348;
@@ -98,11 +102,14 @@ nav > .navcon > ul > li {
   background-color: #00b348;
   color: white;
 }
-#content .content-siler {
-  align-items: center;
+#content .text-paner {
+  margin-left: 600px;
 }
+
 #content .content-item {
   display: inline-block;
+  margin-left: 200px;
+  margin-top: 8px;
 }
 
 /* Container */
@@ -132,4 +139,126 @@ nav > .navcon > ul > li {
   color: white;
   justify-content: center;
   font-size: 50px;
+}
+
+/* COURSE BOX */
+#course {
+  min-height: 400px;
+  /* background-color: black; */
+}
+#course .course-content {
+  margin-top: 20px;
+  display: flex;
+  margin: 10px;
+  margin-left: 45px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#course .course-box {
+  height: 270px;
+  width: 450px;
+  background-color: #333;
+  border-radius: 0.75rem;
+  margin-right: 18px;
+  margin-top: 15px;
+}
+#course .img img {
+  height: 130px;
+  width: 100%;
+  border-radius: 0.75rem;
+}
+#course .img:hover {
+  transform: scale(1.01);
+}
+#course .course-text {
+  color: rgb(238, 97, 2);
+  margin-left: 5px;
+  font-size: 25px;
+  font-weight: bold;
+}
+#course .date {
+  display: flex;
+  border-bottom: #aaa solid 0.5px;
+  color: #aaa;
+  font-size: 13px;
+  padding-left: 8px;
+}
+#course .date div {
+  margin: 4px;
+}
+#course .teacher {
+  display: flex;
+}
+#course .name {
+  color: rgb(30, 175, 83);
+  margin-top: 5px;
+  margin-left: 8px;
+}
+#course .price {
+  float: right;
+  color: rgb(223, 14, 14);
+  background-color: #aaa;
+
+  border-radius: 0.25rem;
+  padding: 4px 8px;
+  margin-left: 130px;
+  margin-top: 5px;
+}
+#course .button {
+  display: flex;
+  margin-top: 5px;
+  justify-content: center;
+}
+#course .button a {
+  text-decoration: none;
+  list-style: none;
+  color: white;
+}
+#course .button-dk,
+.button-them {
+  border-radius: 0.75rem;
+  background-color: #c3370d;
+  width: 100px;
+  height: 35px;
+  display: inline-block;
+  text-align: center;
+  margin-right: 40px;
+  padding-top: 7px;
+}
+#course .button-them {
+  padding: 8px 0px;
+  background-color: none;
+  border: white solid 0.5x;
+}
+#course .button-them:hover {
+  transform: scale(1.05);
+}
+#course .button-dk:hover {
+  transform: scale(1.05);
+}
+#course .header-text {
+  font-size: 40px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  background-color: #1a98d2;
+  padding: 10px;
+}
+#course .header-textnho {
+  text-align: center;
+  color: rgb(37, 131, 171);
+  font-size: 20px;
+  margin-top: 8px;
+}
+#course .xemthem {
+  border-radius: 0.75rem;
+  background-color: #117287;
+  color: white;
+  width: 100px;
+  height: 35px;
+  margin: 0 auto;
+  border: none;
+}
+#course .xemthem:hover {
+  transform: scale(1.01);
 }
