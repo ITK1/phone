@@ -1,0 +1,9 @@
+<?php
+define ('host','localhost');
+define('user','root');
+define('pass','');
+define('db','qlsv_db');
+define('charset','utf8mb4');
+define('base_url','/phone/public/')
+
+?>

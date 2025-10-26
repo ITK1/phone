@@ -1,23 +1,52 @@
--- 1. TẠO CƠ SỞ DỮ LIỆU
-CREATE DATABASE IF NOT EXISTS qlsv_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE IF NOT EXISTS qlsv CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE qlsv;
 
--- Chọn CSDL để sử dụng
-USE qlsv_db;
-
--- 2. BẢNG NGƯỜI DÙNG (USER)
--- Lưu trữ thông tin đăng nhập, vai trò (admin, teacher) và trạng thái duyệt
-CREATE TABLE IF NOT EXISTS user (
-    id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL, -- Cần lưu trữ mật khẩu đã HASH
-    role ENUM('admin', 'teacher') NOT NULL DEFAULT 'teacher',
-    is_approved BOOLEAN NOT NULL DEFAULT 0, -- 0: Chờ duyệt, 1: Đã duyệt
+-- ======================
+-- 1️⃣ Bảng sinh viên
+-- ======================
+CREATE TABLE students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    phone VARCHAR(20),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+);
 
--- 3. THÊM TÀI KHOẢN ADMIN MẶC ĐỊNH///
--- Mật khẩu: 'admin123' (Hãy nhớ HASH mật khẩu này trong code PHP của bạn trước khi INSERT)
--- Ví dụ: Giả sử 'admin123' sau khi hash là '$2y$10$abcdefghijklmnopqrstuvwxyz...'
-INSERT INTO user (username, password, role, is_approved) VALUES 
-('admin', '$2y$10$iM.F3gNl0E7l0Y/r6O00U.z/Fk9Q0IuS/oJ1A3C4D5E6F7G8H9I0', 'admin', 1); 
--- *LƯU Ý QUAN TRỌNG: Bạn phải tạo HASH mật khẩu bằng PHP (password_hash) rồi thay vào đây.*
+-- ======================
+-- 2️⃣ Bảng khóa học
+-- ======================
+CREATE TABLE courses (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- ======================
+-- 3️⃣ Bảng lịch học
+-- ======================
+CREATE TABLE schedules (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT NOT NULL,
+    course_id INT NOT NULL,
+    day VARCHAR(20) NOT NULL,
+    time VARCHAR(20) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE CASCADE,
+    FOREIGN KEY (course_id) REFERENCES courses(id) ON DELETE CASCADE
+);
+
+-- ======================
+-- 4️⃣ Thêm dữ liệu mẫu
+-- ======================
+INSERT INTO students (name, email, phone) VALUES
+('Nguyễn Văn A', 'vana@example.com', '0909123456'),
+('Trần Thị B', 'thib@example.com', '0909234567');
+
+INSERT INTO courses (name, description) VALUES
+('Lập trình PHP cơ bản', 'Khóa học nhập môn PHP và MySQL'),
+('Cơ sở dữ liệu MySQL nâng cao', 'Học thiết kế và tối ưu hóa database');
+
+INSERT INTO schedules (student_id, course_id, day, time) VALUES
+(1, 1, 'Thứ 2', '08:00'),
+(2, 2, 'Thứ 4', '14:00');
