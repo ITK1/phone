@@ -1,11 +1,11 @@
 <?php
-require_once __DIR__ . '/../models/schedule';
+require_once  '/models/schedule';
 
 class ScheduleController{
     private $scheduleController;
 
     public function index(){
-        return $this->scheduleController->getAll();
+        return $this->scheduleController->countSchedules();
     }
 
     public function add($student_id, $courses_id, $dob){

@@ -1,5 +1,5 @@
 <?php
-require_once  '../core/connect.php';
+require_once  'connect.php';
 
 class Course{
     private $conn;
@@ -8,7 +8,7 @@ class Course{
         $this->conn = Database::getsql()->getConnection();
     }
 
-    public function getAll(){
+    public function countCourses(){
         $data = $this->conn->prepare("SELECT * FROM courses ORDER BY id DESC LIMIT 5");
         return $data->fetchAll(PDO::FETCH_ASSOC);
     }
