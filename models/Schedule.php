@@ -1,5 +1,5 @@
 <?php
-require_once  '../core/connect.php';
+require_once  'connect.php';
 
 
 class Schedule{
@@ -9,7 +9,7 @@ public function __contruct(){
     $this->conn = Database::getsql()->getConnection();
 }
 
-public function getAll(){
+public function countSchedules(){
     $sql = "SELECT s.id, st.name AS student, c.name AS courses , s.day, s.time  
     FROM schedule s 
     JOIN stundents st ON s.student_id = st.id 

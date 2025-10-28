@@ -10,7 +10,7 @@ class CourseController{
     }
 
     public function index() {
-        return $this->courseModel->getAll();
+        return $this->courseModel->countCourses();
     }
 
     public function store($name,$teacher){

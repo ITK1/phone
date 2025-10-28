@@ -1,5 +1,6 @@
 <?php
-require_once __DIR__ . '/../models/Student.php';
+
+require_once '../models/Student.php';
 
 class StudentController{
     private $studentModel = null;
@@ -9,7 +10,7 @@ class StudentController{
     }
 
     public function index() {
-        return $this->studentModel->getAllStudents();
+        return $this->studentModel->countStudents();
     }
 
     public function store($name, $email, $dob) {
