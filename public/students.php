@@ -21,7 +21,7 @@ require_once __DIR__ . '/../controllers/StudentController';
 <table border="1" cellpadding="5">
 <tr><th>ID</th><th>Tên</th><th>Email</th><th>Ngày sinh</th></tr>
 <?php foreach ($students as $st): ?>
-<tr>
+<tr >
     <td><?= $st['id'] ?></td>
     <td><?= $st['name'] ?></td>
     <td><?= $st['email'] ?></td>
