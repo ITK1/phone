@@ -10,11 +10,12 @@ class StudentController{
     }
 
     public function index() {
-        return $this->studentModel->countStudents();
-    }
+    return $this->studentModel->getAll(); // Lấy danh sách sinh viên, không phải số lượng
+}
 
-    public function store($name, $email, $dob) {
-        return $this->studentModel->add($name, $email,$dob);
+
+    public function store($name, $email, $phone) {
+        return $this->studentModel->add($name, $email,$phone);
     }
 
 
