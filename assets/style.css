@@ -263,3 +263,26 @@ nav > .navcon > ul > li {
 #course .xemthem:hover {
   transform: scale(1.01);
 }
+
+/* CSS CHO LOGIN */
+#login {
+}
+#login .login-container {
+  width: 650px;
+  height: 450px;
+  background-color: #a18cd1;
+  border-radius: 0.75rem;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+}
+#login .header-text {
+  width: 250px;
+  height: 450px;
+  background-color: #1a98d2;
+}
+#login .login-login {
+  width: 400px;
+  position: absolute;
+  top: 90px;
+}
