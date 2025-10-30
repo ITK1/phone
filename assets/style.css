@@ -266,23 +266,108 @@ nav > .navcon > ul > li {
 
 /* CSS CHO LOGIN */
 #login {
+  background-color: #c9d5fd;
+  min-height: 750px;
+  position: relative;
+}
+#login .login-main {
+  position: absolute;
+  top: 50%; /* đẩy xuống 50% chiều cao */
+  left: 50%;
+  transform: translate(-50%, -50%); /* kéo ngược lại đúng giữa */
+}
+#login .h1 {
+  color: white;
+  font-size: 50px;
+  margin-top: 60px;
+}
+#login .no-tk a {
+  text-decoration: none;
+  list-style: none;
+  color: white;
+  font-size: 12px;
+}
+#login .no-tk a:hover {
+  color: black;
 }
 #login .login-container {
-  width: 650px;
+  width: 670px;
   height: 450px;
-  background-color: #a18cd1;
+  background-color: white;
   border-radius: 0.75rem;
   text-align: center;
   margin: 0 auto;
-  position: relative;
+  display: flex;
+}
+#login .login-group {
 }
 #login .header-text {
-  width: 250px;
+  width: 300px;
   height: 450px;
+  background-color: #6590f8;
+  border-radius: 0.75rem 1.5rem 1.5rem 0.75rem;
+}
+#login .btn-register {
   background-color: #1a98d2;
+  border: white solid 1px;
+  color: white;
+  padding: 5px 20px;
+  border-radius: 0.25rem;
+  margin-top: 25px;
+}
+#login .btn-register:hover {
+  transform: scale(1.05);
 }
 #login .login-login {
-  width: 400px;
-  position: absolute;
+  width: 300px;
   top: 90px;
+}
+#login .header-login {
+  width: 150px;
+  display: inline-block;
+}
+
+#login .login-header {
+  font-weight: bold;
+  font-size: 30px;
+  margin: 40px;
+  margin-left: 100px;
+}
+#login .form-group input {
+  border-radius: 0.75rem;
+  margin: 8px;
+  background-color: #c9d5fd;
+  border: none;
+  padding: 12px 60px;
+  margin-left: 45px;
+}
+#login .form-group input {
+  color: black;
+}
+#login .login-group {
+  margin-left: 60px;
+}
+#login .forgot-pass a {
+  list-style: none;
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+}
+#login .forgot-pass a:hover {
+  color: #6590f8;
+}
+#login .login-group {
+  margin-top: 40px;
+
+  display: inline-block;
+}
+#login .btn-login button {
+  background-color: #6590f8;
+  padding: 8px 80px;
+  border: none;
+  border-radius: 0.75rem;
+  margin: 8px;
+}
+#login .btn-login:hover {
+  transform: scale(1.05);
 }
