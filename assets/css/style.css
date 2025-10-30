@@ -2,10 +2,13 @@
    🎨 STYLE CHUNG CHO TOÀN DỰ ÁN
    =============================== */
 
-body {
-  background-color: #f6f8fa;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .navbar {
@@ -225,4 +228,12 @@ html {
 }
 #main-list {
   display: flex;
+}
+
+/* CSS CHO LOGIN */
+
+#login .login-container {
+  width: 600px;
+  height: 400px;
+  background-color: antiquewhite;
 }
