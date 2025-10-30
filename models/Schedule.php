@@ -1,6 +1,5 @@
 <?php
-require_once  'connect.php';
-
+require_once __DIR__ . '/../core/connect.php';
 
 class Schedule{
 private $conn;
