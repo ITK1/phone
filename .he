@@ -1,0 +1,24 @@
+QLSV/
+│
+├── config/
+│   └── config.php
+│
+├── src/
+│   ├── Core/
+│   │   └── Database.php
+│   │
+│   ├── Models/
+│   │   ├── Student.php
+│   │   ├── Course.php
+│   │   └── Schedule.php
+│   │
+│   └── Controllers/
+│       ├── StudentController.php
+│       ├── CourseController.php
+│       └── ScheduleController.php
+│
+└── public/
+    ├── index.php       ← đây là file chính, người xem truy cập vào đầu tiên
+    ├── students.php    ← hiển thị danh sách sinh viên
+    ├── courses.php     ← hiển thị danh sách khóa học
+    └── schedules.php   ← hiển thị thời khóa biểu

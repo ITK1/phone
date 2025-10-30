@@ -8,22 +8,23 @@ public function __construct(){
     $this->conn = Database::getsql()->getConnection();
 }
 
-public function countCourses(){
-    $data = $this->conn->prepare("SELECT * FROM courses ORDER BY id DESC LIMIT 5");
+public function getCourseById($id){
+    $data = $this->conn->prepare("SELECT * FROM courses WHERE id = ?");
+    $data->execute([$id]);
+    return $data->fetch(PDO::FETCH_ASSOC);
+}
+
+public function getAllCourses(){
+    $data = $this->conn->prepare("SELECT * FROM courses ORDER BY id DESC");
     $data->execute();
     return $data->fetchAll(PDO::FETCH_ASSOC);
-
 }
 
 
-public function add($name,$teacher){
-    $data = $this->conn->prepare("INSERT INTO courses (name,teacher) VALUES (?,?) ");
-    return $data->execute([$name,$teacher]);
+public function addCourses($name, $teacher,$time, $description, $price ){
+    $data = $this->conn->prepare("INSERT INTO courses (name, teacher, time, `description`, price) VALUES (?,?,?,?,?)");
+    $data ->execute([$name,$teacher,$time,$description,$price]);
 }
- public function delete($id){
-    $data= $this->conn->prepare("DELETE FROM courses WHERE id = ?");
-    return $data->execute([$id]);
- }
 
  }
 
