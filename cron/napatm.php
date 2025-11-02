@@ -1,90 +1,68 @@
 <?php
-require_once __DIR__ . '/../core/connect.php';
+require_once __DIR__ . '/../Core/connect.php';
 
-class PaymentModel{
-    private $pdo;
+$db = (new Database())->getConnection();
 
-    public function __construct(PDO $pdo){
-        $this->pdo = $pdo;
-    }
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $userId = 1; // giả lập user (sau này bạn lấy từ $_SESSION)
+    $bankAccount = $_POST['bank_account'];
+    $bankName = $_POST['bank_name'];
+    $accountHolder = $_POST['account_holder'];
+    $content = $_POST['content'];
+    $amount = $_POST['amount'];
 
-    public function createPending(array $data) :array{
-        $sql = "INSERT INTO transactions (user_id, bank_name, account_number, account_name, amount, content, status, created_at)
-                VALUES (:user_id, :bank_name, :account_number, :account_name, :amount, :content, 'pending', NOW())";
-    $data = $this->pdo->prepare($sql);
-    $data->execute([
-        'user_id' =>$data['user_id'],
-        'bank_name' => $data['bank_name'],
-        'account_number' => $data['account_number'],
-        'account_name' => $data['account_name'],
-        'amount' => $data['amount'],
-        'content' => $data['content']
-    ]);
-    
-    $dulieu['id'] = $this->pdo->lastInsertId();
-     return $dulieu;
+    $stmt = $db->prepare("INSERT INTO transactions (user_id, bank_account, bank_name, account_holder, content, amount) 
+                          VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->execute([$userId, $bankAccount, $bankName, $accountHolder, $content, $amount]);
+
+    // Tạo QR động theo định dạng VietQR
+    $qrData = "https://img.vietqr.io/image/{$bankName}-{$bankAccount}-qr_only.png?amount={$amount}&addInfo=" . urlencode($content) . "&accountName=" . urlencode($accountHolder);
 }
-}
-
-
-class PaymentController {
-    private $model;
-    public function __construct(PaymentModel $model) {
-        $this->model = $model;
-    }
-
-    public function createPayment(int $userId, string $bankName, string $accountNumber, string $accountName, float $amount): array {
-        $content = "NAP{$userId}_" . time() . "_" . random_int(1000, 9999);
-        $data = [
-            'user_id' => $userId,
-            'bank_name' => $bankName,
-            'account_number' => $accountNumber,
-            'account_name' => $accountName,
-            'amount' => $amount,
-            'content' => $content
-        ];
-        $transaction = $this->model->createPending($data);
-    
-        //Tao QR
-        $qrUrl = "https://img.vietqr.oi/image/{$bankname}-{$accountNumber}-compact2.png"
-        . "?amount= {$amount}&addInfo={$content}&accountName=" . urlencode($accountName);
-        
-        return  [
-        'transaction' => $transaction['id'],
-        'qr_url' => $qrUrl,
-        'content' => $content,
-        'amount' => $amount,
-        'bank_name' => $bankName,
-        'account_number' => $accountNumber,
-        'account_name' => $accountName, 
-        ];
-
-
-    }   
-}
-
-
-//=== ENTRY POINT ===
-
-$model = new PaymentModel($pdo);
-$controller= new PaymentController($model);
-
-$userId = 1;
-$result = null;
-$erro = null;
-
-if($_SERVER['REQUEST_METHOD']=== 'POST'){
-    $bankName = trim($_POST['bank_name']);
-    $accountNumber = trim($_POST['account_number']);    
-    $accountName = trim($_POST['account_name']);
-    $amount = trim($_POST['amount']);
-
-    if($amount < 0 ||  !$bankName || $accountNumber || !$accountName){
-        $error = "vui lòng nhập đủ thông tin !";
-    }else{
-        $result = $controller ->createPayment($userId, $bankName, $accountNumber, $accountName, $amount);
-    }
-}
-
-
 ?>
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Nạp ATM tự động</title>
+    <style>
+    form {
+        max-width: 400px;
+        margin: 40px auto;
+        font-family: Arial;
+    }
+
+    input,
+    button {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+    img {
+        width: 100%;
+        margin-top: 20px;
+    }
+    </style>
+</head>
+
+<body>
+    <h2 align="center">Nạp tiền tự động qua ngân hàng</h2>
+
+    <form method="POST">
+        <input type="text" name="bank_account" placeholder="Số tài khoản" required>
+        <input type="text" name="bank_name" placeholder="Ngân hàng (ví dụ: vietcombank)" required>
+        <input type="text" name="account_holder" placeholder="Tên chủ tài khoản" required>
+        <input type="text" name="content" placeholder="Nội dung chuyển khoản (VD: NAP123)" required>
+        <input type="number" name="amount" placeholder="Số tiền (VD: 10000)" required>
+        <button type="submit">Tạo mã QR</button>
+    </form>
+
+    <?php if (isset($qrData)): ?>
+    <h3 align="center">Quét mã để chuyển khoản</h3>
+    <img src="<?= $qrData ?>" alt="QR chuyển khoản">
+    <?php endif; ?>
+</body>
+
+</html>
