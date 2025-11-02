@@ -75,7 +75,7 @@ $amount = isset($_POST['amount']) ? (int)$_POST['amount'] : 0;
           <?php endif; ?>
       </div>
     </div>
-    </div>
+    </div>i
   </div>  
 </body>
 </html>
