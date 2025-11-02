@@ -23,11 +23,6 @@ class PaymentModels{
     ])
 }
 
-<<<<<<< HEAD
-}
-
-?>
-=======
       <?php if ($amount > 0): ?>
       <div class="box-qr">
       <h3>👉 Quét mã QR bên dưới để thanh toán</h3>
@@ -72,4 +67,3 @@ class PaymentModels{
   </div>  
 </body>
 </html>
->>>>>>> 529f8ef2b77473a08fcde4f6936d02c9bb15662e
