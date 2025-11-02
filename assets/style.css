@@ -371,3 +371,34 @@ nav > .navcon > ul > li {
 #login .btn-login:hover {
   transform: scale(1.05);
 }
+
+/* CSS COURSE ADMIN */
+#course-adm {
+  min-height: 1000px;
+}
+#course-adm .form-input {
+  width: 400px;
+  height: 350px;
+
+  margin: 0 auto;
+  border-radius: 0.75rem;
+  margin-bottom: 35;
+}
+#course-adm .text {
+  color: black;
+  font-size: 30px;
+  text-align: center;
+}
+#course-adm .input-group input,
+textarea {
+  background-color: #c9d5fd;
+  padding: 10px 40px;
+  border-radius: 0.25rem;
+  margin: 8px 0px 8px 70px;
+}
+#course-adm .btn-submit button {
+  background-color: royalblue;
+  padding: 10px 20px;
+  width: 20px;
+  color: #c3370d;
+}
