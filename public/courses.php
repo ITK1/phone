@@ -15,7 +15,7 @@ $courses = $courseModel->getAllCourses();
 <head>
     <meta charset="UTF-8">
     <title>Khóa học</title>
-    <link rel="stylesheet" href="../assets/style.css" />
+    <link rel="stylesheet" href="../assets/style.css"/>
 </head>
 <body>
 <div id="course-adm">
@@ -42,20 +42,32 @@ $courses = $courseModel->getAllCourses();
                 </div>
             </form>
         </div>
-        <table border="1" cellpadding="5">
-        <tr><th>ID</th><th>Tên</th><th>Thời Gian</th><th>Giáo viên</th><th>Giá</th><th>Xem</th></tr>
-        <?php foreach ($courses as $c): ?>
-        <tr>
-            <td><?= $c['id'] ?></td>
-            <td><?= $c['name'] ?></td>      
-            <td><?=$c['time']?></td>
-            <td><?= $c['teacher'] ?></td>
-            <td><?= number_format($c['price'] ?? 0, 0) ?>đ</td>
-            <td><a href="course_detail.php?id=<?= $c['id'] ?>">Chi tiết</a></td>
-        </tr>
+
+  <div class="danhsach">
+    <div class="table-main">
+        <div class="header">
+            <div>ID</div>
+            <div>Họ tên</div>
+            <div>Ngày sinh</div>
+            <div>Lớp</div>
+            <div>Điểm trung bình</div>
+            <div>Chi tiết</div>
+        </div>
+
+        <?php foreach ($students as $s): ?>
+        <div class="content">
+            <div><?= $s['id'] ?></div>
+            <div><?= htmlspecialchars($s['name']) ?></div>
+            <div><?= htmlspecialchars($s['birthday']) ?></div>
+            <div><?= htmlspecialchars($s['class']) ?></div>
+            <div><?= number_format($s['gpa'], 2) ?></div>
+            <div><a href="student_detail.php?id=<?= $s['id'] ?>">Xem</a></div>
+        </div>
         <?php endforeach; ?>
-        </table>
     </div>
+</div>
+
+    
 </div>
 </body>
 </html>

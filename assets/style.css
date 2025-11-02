@@ -376,6 +376,9 @@ nav > .navcon > ul > li {
 #course-adm {
   min-height: 1000px;
 }
+#course-adm .container {
+  margin-top: 20px;
+}
 #course-adm .form-input {
   width: 400px;
   height: 350px;
@@ -391,14 +394,72 @@ nav > .navcon > ul > li {
 }
 #course-adm .input-group input,
 textarea {
-  background-color: #c9d5fd;
+  /* background-color: #c9d5fd; */
   padding: 10px 40px;
   border-radius: 0.25rem;
   margin: 8px 0px 8px 70px;
 }
-#course-adm .btn-submit button {
-  background-color: royalblue;
-  padding: 10px 20px;
-  width: 20px;
-  color: #c3370d;
+
+#course-adm button {
+  background-color: #6590f8;
+  padding: 8px 78px;
+  border: none;
+  border-radius: 0.25rem;
+  margin: 8px;
+  margin-left: 70px;
+  color: white;
+}
+
+#course-adm .danhsach {
+  width: 80%;
+  margin: 30px auto;
+  font-family: Arial, sans-serif;
+  margin-top: 50px;
+}
+
+#course-adm .table-main {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  overflow: hidden;
+  color: white;
+}
+
+#course-adm .header,
+.content {
+  display: grid;
+  grid-template-columns: 60px 200px 150px 120px 120px 100px;
+  padding: 10px;
+  align-items: center;
+}
+
+#course-adm .header {
+  background-color: #0859c3;
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
+}
+
+#course-adm .content:nth-child(even) {
+  background-color: #fafafa;
+}
+
+#course-adm .content div {
+  padding: 5px;
+  color: black;
+}
+
+#course-adm .content a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+#course-adm .content a:hover {
+  text-decoration: underline;
+}
+#course-adm label {
+  font-size: 12px;
+  font-weight: bold; /* chữ đậm hơn cho đẹp */
+  color: #333;
+  width: 12px;
 }
