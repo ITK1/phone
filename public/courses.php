@@ -15,7 +15,7 @@ $courses = $courseModel->getAllCourses();
 <head>
     <meta charset="UTF-8">
     <title>Khóa học</title>
-    <link rel="stylesheet" href="../assets/style.css" />
+    <link rel="stylesheet" href="../assets/style.css?v=1.0" />
 </head>
 <body>
 <div id="course-adm">

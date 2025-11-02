@@ -1,6 +1,6 @@
 <?php
 require_once '../config/config.php';
-require_once '../src/Core/Database.php';
+require_once '../Core/connect.php';
 $db = Database::getsql()->getConnection();
 
 $data = $db->query("SELECT t.*, u.name AS username FROM transactions t 

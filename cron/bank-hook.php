@@ -1,6 +1,6 @@
 <?php
 require_once '../config/config.php';
-require_once '../src/Core/Database.php';
+require_once '../Core/connect.php';
 $db = Database::getsql()->getConnection();
 
 // Token bảo mật (phải trùng với token bên webhook service)
