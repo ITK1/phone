@@ -45,13 +45,13 @@
       </form>
 
       <?php if ($error): ?>
-      <p style="color: red"></p>
+      <p style="color: red"><?=htmlspecialchars($error)?></p>
       <?php endif; ?>
 
       <?php if ($result): ?>
       <div class="qr">
         <h3>Quét mã để nạp tiền</h3>
-        <img src="" width="260" />
+        <img src="<?=htmlspecialchars($result['qr_url'])?>" width="260" />
         <p>
           <b>Nội dung:</b>
           <?=htmlspecialchars($result['content'])?>
