@@ -3,65 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <title>Nạp ATM - PDO OOP</title>
-    <style>
-      body {
-        font-family: Arial;
-        background: #f9f9f9;
-        padding: 30px;
-      }
-      .container {
-        max-width: 600px;
-        margin: auto;
-        background: #fff;
-        padding: 20px;
-        border-radius: 8px;
-      }
-      input,
-      button {
-        padding: 10px;
-        width: 100%;
-        margin: 5px 0;
-      }
-      .qr {
-        text-align: center;
-        margin-top: 20px;
-      }
-    </style>
+    <link rel="stylesheet" href="../assets/style.css" />
   </head>
   <body>
-    <div class="container">
-      <h2>Tạo mã nạp tiền (QR VietQR)</h2>
+    <div id="qr">
+      <div class="container">
+        <div class="text">Tạo mã nạp tiền (QR VietQR)</div>
 
-      <form method="post">
-        <label>Ngân hàng:</label>
-        <input name="bank_name" value="MB" required />
-        <label>Số tài khoản:</label>
-        <input name="account_number" value="0978123456" required />
-        <label>Tên chủ tài khoản:</label>
-        <input name="account_name" value="PHAN LE BA KHANG" required />
-        <label>Số tiền (VNĐ):</label>
-        <input type="number" name="amount" required />
-        <button type="submit">Tạo QR</button>
-      </form>
+        <form method="post">
+          <div class="input-box">
+            <div>Ngân hàng:</div>
+            <input name="bank_name" value="MB" required />
+          </div>
+          <div class="input-box">
+            <div>Số tài khoản:</div>
+            <input name="account_number" value="0978123456" required />
+          </div>
+          <div class="input-box">
+            <div>Tên chủ tài khoản:</div>
+            <input name="account_name" value="PHAN LE BA KHANG" required />
+          </div>
+          <div class="input-box">
+            <div>Số tiền (VNĐ):</div>
+            <input type="number" name="amount" required />
+          </div>
+          <button type="submit">Tạo QR</button>
+        </form>
 
-      <?php if ($error): ?>
-      <p style="color: red"><?=htmlspecialchars($error)?></p>
-      <?php endif; ?>
+        <?php if ($error): ?>
+        <p style="color: red"><?=htmlspecialchars($error)?></p>
+        <?php endif; ?>
 
-      <?php if ($result): ?>
-      <div class="qr">
-        <h3>Quét mã để nạp tiền</h3>
-        <img src="<?=htmlspecialchars($result['qr_url'])?>" width="260" />
-        <p>
-          <b>Nội dung:</b>
-          <?=htmlspecialchars($result['content'])?>
-        </p>
-        <p>
-          <b>Số tiền:</b>
-          <?=number_format($result['amount'],0,',','.')?>đ
-        </p>
+        <?php if ($result): ?>
+        <div class="box-qr">
+          <h3>Quét mã để nạp tiền</h3>
+          <div class="img-qr">
+            <img src="<?=htmlspecialchars($result['qr_url'])?>" width="260" />
+          </div>
+          <div class="box-tt">
+            <div class="box">
+              <div>Nội dung:</div>
+              <div class="input-nhap">
+                <?=htmlspecialchars($result['content'])?>
+              </div>
+            </div>
+            <div class="box">
+              <div>Số tiền:</div>
+              <div class="input-nhap">
+                <?=number_format($result['amount'],0,',','.')?>đ
+              </div>
+            </div>
+          </div>
+          <?php endif; ?>
+        </div>
       </div>
-      <?php endif; ?>
     </div>
   </body>
 </html>
