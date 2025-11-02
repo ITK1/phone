@@ -1,68 +1,75 @@
 <?php
-require_once __DIR__ . '/../Core/connect.php';
+require_once '../config/config.php';
+require_once '../Core/connect.php';
+$db = Database::getsql()->getConnection();
 
-$db = (new Database())->getConnection();
+// Giả sử user_id = 1 (bạn có thể lấy từ session khi đăng nhập)
+$user_id = 1;
+$bank = "MB";           // Mã ngân hàng (VD: MB, VCB, TCB)
+$account = "0779002304"; // STK ngân hàng
+$account_name = "PHAN LE BA KHANG";
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $userId = 1; // giả lập user (sau này bạn lấy từ $_SESSION)
-    $bankAccount = $_POST['bank_account'];
-    $bankName = $_POST['bank_name'];
-    $accountHolder = $_POST['account_holder'];
-    $content = $_POST['content'];
-    $amount = $_POST['amount'];
+// Sinh nội dung chuyển khoản (NAP + user_id)
+$noidung = "napthe" . $user_id;
 
-    $stmt = $db->prepare("INSERT INTO transactions (user_id, bank_account, bank_name, account_holder, content, amount) 
-                          VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->execute([$userId, $bankAccount, $bankName, $accountHolder, $content, $amount]);
-
-    // Tạo QR động theo định dạng VietQR
-    $qrData = "https://img.vietqr.io/image/{$bankName}-{$bankAccount}-qr_only.png?amount={$amount}&addInfo=" . urlencode($content) . "&accountName=" . urlencode($accountHolder);
-}
+// Nếu nhập số tiền
+$amount = isset($_POST['amount']) ? (int)$_POST['amount'] : 0;
 ?>
-
 <!DOCTYPE html>
 <html lang="vi">
 
 <head>
     <meta charset="UTF-8">
-    <title>Nạp ATM tự động</title>
+    <title>Nạp tiền tự động</title>
     <style>
-    form {
-        max-width: 400px;
-        margin: 40px auto;
+    body {
         font-family: Arial;
+        background: #f4f4f4;
+        padding: 30px;
+    }
+
+    .container {
+        max-width: 500px;
+        margin: auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
     }
 
     input,
     button {
-        width: 100%;
         padding: 10px;
-        margin: 5px 0;
+        width: 100%;
+        margin-top: 10px;
     }
 
     img {
-        width: 100%;
-        margin-top: 20px;
+        display: block;
+        margin: 20px auto;
     }
     </style>
 </head>
 
 <body>
-    <h2 align="center">Nạp tiền tự động qua ngân hàng</h2>
+    <div class="container">
+        <h2>💰 Nạp tiền tự động</h2>
+        <form method="POST">
+            <label>Nhập số tiền muốn nạp:</label>
+            <input type="number" name="amount" placeholder="VD: 100000" required>
+            <button type="submit">Tạo mã QR</button>
+        </form>
 
-    <form method="POST">
-        <input type="text" name="bank_account" placeholder="Số tài khoản" required>
-        <input type="text" name="bank_name" placeholder="Ngân hàng (ví dụ: vietcombank)" required>
-        <input type="text" name="account_holder" placeholder="Tên chủ tài khoản" required>
-        <input type="text" name="content" placeholder="Nội dung chuyển khoản (VD: NAP123)" required>
-        <input type="number" name="amount" placeholder="Số tiền (VD: 10000)" required>
-        <button type="submit">Tạo mã QR</button>
-    </form>
-
-    <?php if (isset($qrData)): ?>
-    <h3 align="center">Quét mã để chuyển khoản</h3>
-    <img src="<?= $qrData ?>" alt="QR chuyển khoản">
-    <?php endif; ?>
+        <?php if ($amount > 0): ?>
+        <h3>👉 Quét mã QR bên dưới để thanh toán</h3>
+        <img src="https://img.vietqr.io/image/<?= $bank ?>-<?= $account ?>-compact2.jpg?accountName=<?= urlencode($account_name) ?>&amount=<?= $amount ?>&addInfo=<?= urlencode($noidung) ?>"
+            width="300">
+        <p><b>Ngân hàng:</b> <?= $bank ?></p>
+        <p><b>STK:</b> <?= $account ?></p>
+        <p><b>Chủ TK:</b> <?= $account_name ?></p>
+        <p><b>Nội dung chuyển khoản:</b> <?= $noidung ?></p>
+        <p><b>Số tiền:</b> <?= number_format($amount) ?>đ</p>
+        <?php endif; ?>
+    </div>
 </body>
 
 </html>
