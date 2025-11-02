@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Nạp ATM - PDO OOP</title>
+    <style>
+      body {
+        font-family: Arial;
+        background: #f9f9f9;
+        padding: 30px;
+      }
+      .container {
+        max-width: 600px;
+        margin: auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      input,
+      button {
+        padding: 10px;
+        width: 100%;
+        margin: 5px 0;
+      }
+      .qr {
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Tạo mã nạp tiền (QR VietQR)</h2>
+
+      <form method="post">
+        <label>Ngân hàng:</label>
+        <input name="bank_name" value="MB" required />
+        <label>Số tài khoản:</label>
+        <input name="account_number" value="0978123456" required />
+        <label>Tên chủ tài khoản:</label>
+        <input name="account_name" value="PHAN LE BA KHANG" required />
+        <label>Số tiền (VNĐ):</label>
+        <input type="number" name="amount" required />
+        <button type="submit">Tạo QR</button>
+      </form>
+
+      <?php if ($error): ?>
+      <p style="color: red"></p>
+      <?php endif; ?>
+
+      <?php if ($result): ?>
+      <div class="qr">
+        <h3>Quét mã để nạp tiền</h3>
+        <img src="" width="260" />
+        <p>
+          <b>Nội dung:</b>
+          <?=htmlspecialchars($result['content'])?>
+        </p>
+        <p>
+          <b>Số tiền:</b>
+          <?=number_format($result['amount'],0,',','.')?>đ
+        </p>
+      </div>
+      <?php endif; ?>
+    </div>
+  </body>
+</html>
