@@ -7,7 +7,7 @@ $payload = [
     "time" => date('Y-m-d H:i:s')
 ];
 
-$ch = curl_init("http://localhost/QLSV/public/bank-hook.php");
+$ch = curl_init("http://localhost/phone/cron/bank-hook.php");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
     "Content-Type: application/json",

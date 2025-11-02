@@ -15,7 +15,7 @@ $courses = $courseModel->getAllCourses();
 <head>
     <meta charset="UTF-8">
     <title>Khóa học</title>
-    <link rel="stylesheet" href="../assets/style.css"/>
+    <link rel="stylesheet" href="../assets/style.css" />
 </head>
 <body>
 <div id="course-adm">
@@ -46,21 +46,22 @@ $courses = $courseModel->getAllCourses();
   <div class="danhsach">
     <div class="table-main">
         <div class="header">
+       
             <div>ID</div>
-            <div>Họ tên</div>
-            <div>Ngày sinh</div>
-            <div>Lớp</div>
-            <div>Điểm trung bình</div>
-            <div>Chi tiết</div>
+            <div>Tên Khóa Học</div>
+            <div>Thời Gian</div>
+            <div>Giáo Viên</div>
+            <div>Giá tiền</div>
+            <div>Mô tả</div>
         </div>
 
-        <?php foreach ($students as $s): ?>
+        <?php foreach ($courses as $s): ?>
         <div class="content">
             <div><?= $s['id'] ?></div>
             <div><?= htmlspecialchars($s['name']) ?></div>
-            <div><?= htmlspecialchars($s['birthday']) ?></div>
-            <div><?= htmlspecialchars($s['class']) ?></div>
-            <div><?= number_format($s['gpa'], 2) ?></div>
+            <div><?= htmlspecialchars($s['time']) ?></div>
+            <div><?= htmlspecialchars($s['teacher']) ?></div>
+            <div><?= number_format($s['price'], 2) ?></div>
             <div><a href="student_detail.php?id=<?= $s['id'] ?>">Xem</a></div>
         </div>
         <?php endforeach; ?>

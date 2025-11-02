@@ -6,11 +6,11 @@ $db = Database::getsql()->getConnection();
 // Giả sử user_id = 1 (bạn có thể lấy từ session khi đăng nhập)
 $user_id = 1;
 $bank = "MB";           // Mã ngân hàng (VD: MB, VCB, TCB)
-$account = "0978123456"; // STK ngân hàng
+$account = "0779002304"; // STK ngân hàng
 $account_name = "PHAN LE BA KHANG";
 
 // Sinh nội dung chuyển khoản (NAP + user_id)
-$noidung = "NAP" . $user_id;
+$noidung = "napthe" . $user_id;
 
 // Nếu nhập số tiền
 $amount = isset($_POST['amount']) ? (int)$_POST['amount'] : 0;
