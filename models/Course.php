@@ -35,12 +35,14 @@ class Course {
     }
     
     // Thêm video
-public function addVideo($course_id, $title, $video_url, $description, $is_demo = 0) {
-    $sql = "INSERT INTO course_videos (course_id, title, video_url, description, is_demo)
-            VALUES (?, ?, ?, ?, ?)";
-    $stmt = $this->conn->prepare($sql);
-    $stmt->execute([$course_id, $title, $video_url, $description, $is_demo]);
-}
+    public function addVideo($course_id, $title, $video_url, $description, $is_demo, $duration) {
+        $sql = "INSERT INTO course_videos (course_id, title, video_url, description, is_demo, duration)
+                VALUES (?, ?, ?, ?, ?, ?)";
+        $stmt = $this->conn->prepare($sql);
+        return $stmt->execute([$course_id, $title, $video_url, $description, $is_demo, $duration]);
+    }
+    
+    
 
 // Lấy video theo khóa học
 public function getVideoCourses($course_id) {
@@ -57,7 +59,13 @@ public function getDemoVideo($course_id) {
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
-    
+
+    public function getTotalDuration($course_id){
+        $data = $this->conn->prepare("SELECT SUM(duration) AS total_duration FROM course_videos WHERE course_id = ?");
+        $data->execute([$course_id]);
+        $result = $data->fetch(PDO::FETCH_ASSOC);
+        return $result ? (int)$result['total_duration'] :0; 
+    }
     
 }
 ?>

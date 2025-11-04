@@ -1,7 +1,9 @@
 <?php
 require_once __DIR__ . '/../models/Course.php';
 
+
 $courseModel = new Course();
+
 
 if (!isset($_GET['id']) || empty($_GET['id'])) {
     die("Không có ID khóa học");
@@ -10,8 +12,13 @@ if (!isset($_GET['id']) || empty($_GET['id'])) {
 $id = intval($_GET['id']);
 $course = $courseModel->getCourseById($id);
 $videos = $courseModel->getVideoCourses($id);
+$totalDuration = $courseModel->getTotalDuration($id);
 $demoVideo = $courseModel->getDemoVideo($id); // ✅ video học thử
 $isRegistered = false; // ✅ sau này bạn thay bằng kiểm tra đăng ký thật
+
+$hours = floor($totalDuration / 60);
+$minutes = $totalDuration % 60;
+$durationText = ($hours > 0) ? "{$hours} giờ {$minutes} phút" : "{$minutes} phút";
 
 if (!$course) {
     die("Khóa học không tồn tại");
@@ -86,7 +93,7 @@ if (!$course) {
       <div class="text-h4">Nội dung khóa học</div>
       <div class="date">
         <div class="thoiluong"><?= count($videos) ?> <span>bài học</span></div>
-        <div class="thoiluong">Thời lượng <span><?= htmlspecialchars($course['time']) ?></span></div>
+        <div class="thoiluong">Thời lượng <span><?= htmlspecialchars($durationText) ?></span></div>
       </div>
 
       <div class="course-list">
