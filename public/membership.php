@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Đăng ký gói học viên</title>
+    <link rel="stylesheet" href="../assets/style.css">
     <style>
         body { font-family: Arial; background: #f2f2f2; margin: 0; padding: 0; }
         .container { max-width: 600px; margin: 50px auto; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
@@ -33,22 +34,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </style>
 </head>
 <body>
-<div class="container">
-    <h2>Đăng ký Gói Thành Viên</h2>
-    <?php if (!empty($success)) echo "<div class='msg' style='color:green;'>$success</div>"; ?>
-    <?php if (!empty($error)) echo "<div class='msg' style='color:red;'>$error</div>"; ?>
-    <form method="POST">
-        <input type="text" name="name" placeholder="Họ và tên" required>
-        <input type="email" name="email" placeholder="Email của bạn" required>
-        <select name="plan" required>
-            <option value="">-- Chọn gói học --</option>
-            <option value="Tháng">Gói Tháng - 199.000đ</option>
-            <option value="6 Tháng">Gói 6 Tháng - 899.000đ</option>
-            <option value="Năm">Gói Năm - 1.499.000đ</option>
-        </select>
-        <button type="submit">Đăng ký gói</button>
-    </form>
-    <a href="index.php" style="display:block;text-align:center;margin-top:10px;">← Quay lại</a>
+<div id="add-video">
+    <div class="container-dk-tv">
+        <div class="box">
+            <div class="text-dk-tv"><h2>Đăng ký Gói Thành Viên</h2></div>
+            <?php if (!empty($success)) echo "<div class='msg' style='color:green;'>$success</div>"; ?>
+            <?php if (!empty($error)) echo "<div class='msg' style='color:red;'>$error</div>"; ?>
+            <form method="POST">
+                <div class="input-box">
+                    <input type="text" name="name" placeholder="Họ và tên" required>
+                </div>
+                <div class="input-box">
+                    <input type="email" name="email" placeholder="Email của bạn" required>
+                </div>
+                <div class="input-box">
+                    <select name="plan" required>
+                    <option value="">-- Chọn gói học --</option>
+                    <option value="Tháng">Gói Tháng - 199.000đ</option>
+                    <option value="6 Tháng">Gói 6 Tháng - 899.000đ</option>
+                    <option value="Năm">Gói Năm - 1.499.000đ</option>
+                </select>
+                </div>
+                <div class="btn"><button type="submit">Đăng ký gói</button></div>
+            </form>
+           <a href="index.php" style="display:block;text-align:center;margin-top:10px;">← Quay lại</a>
+        </div>
+    </div>
 </div>
 </body>
 </html>

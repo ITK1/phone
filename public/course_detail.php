@@ -39,6 +39,7 @@ if (!$course) {
 <div id="product">
   <div class="header-login">
     <div class="nav-login">
+      <div class="btn-thoat"><a href="">⟨   Back</a> </div>
       <div class="nav-dk"><a href="#">Đăng ký</a></div>
       <div class="nav-dn"><a href="#">Đăng nhập</a></div>
     </div>

@@ -74,41 +74,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thêm Video</title>
+    <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
-        <h2>Thêm Video Cho Khóa Học</h2>
+    <div id="add-video">
+        
+        <div class="box">
+            <div class="text"><h2>Thêm Video Cho Khóa Học</h2></div>
         <?php if(!empty($error)): ?>
         <p style="color:red;"> <?= htmlspecialchars($error)?></p>
         <?php endif; ?>
 
         <form action="" method="POST">
-        <label>Chọn khóa học:</label><br>
-        <select name="course_id" required>
-            <option value="">-- Chọn khóa học --</option>
-            <?php foreach ($courses as $course): ?>
-                <option value="<?= $course['id'] ?>">
-                    <?= htmlspecialchars($course['name']) ?> (GV: <?= htmlspecialchars($course['teacher']) ?>)
-                </option>
-            <?php endforeach; ?>
-        </select><br><br>
+        
+            <div class="input-box">
+                <label>Chọn khóa học:</label><br>
+                <select name="course_id" required>
+                  <option value="">-- Chọn khóa học --</option>
+                  <?php foreach ($courses as $course): ?>
+                      <option value="<?= $course['id'] ?>">
+                          <?= htmlspecialchars($course['name']) ?> (GV: <?= htmlspecialchars($course['teacher']) ?>)
+                      </option>
+                  <?php endforeach; ?>
+              </select>
+            </div>
 
-        <label>Tiêu đề video:</label><br>
-        <input type="text" name="title" required><br><br>
+            <div class="input-box">
+                <label>Tiêu đề video:</label><br>
+                <input type="text" name="title" required><br><br>
+            </div>     
 
-        <label>Link video YouTube:</label><br>
-        <input type="text" name="video_url" required><br><br>
+            <div class="input-box">
+                <label>Link video YouTube:</label><br>
+                 <input type="text" name="video_url" required><br><br>
+            </div>       
 
-        <label>Mô tả video:</label><br>
-        <textarea name="description"></textarea><br><br>
+            <div class="input-box">
+                <label>Mô tả video:</label><br>
+                <textarea name="description"></textarea><br><br>
+            </div> 
+            <div class="input-box">
+                <label>Thời lượng (phút):</label><br>
+                <input type="number" name="duration" min="1" placeholder="Nhập thời lượng video"><br><br>
 
-        <label>Thời lượng (phút):</label><br>
-        <input type="number" name="duration" min="1" placeholder="Nhập thời lượng video"><br><br>
+            </div>
+            
+            <div class="input-box">
+                <label>
+                <input type="checkbox" name="is_demo" value="1"> Đây là video học thử (demo)
+                </label><br><br>
+            </div>
 
-        <label>
-            <input type="checkbox" name="is_demo" value="1"> Đây là video học thử (demo)
-        </label><br><br>
-
-        <button type="submit">Thêm video</button>
-    </form>
+            <div class="btn">
+                <button type="submit">Thêm video</button>
+            </div>
+        </form>
+    </div>
+    </div>
 </body>
 </html>
