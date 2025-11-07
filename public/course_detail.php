@@ -77,7 +77,7 @@ if (!$course) {
 
 
       <div class="free"><?= $course['price'] == 0 ? 'Miễn phí' : number_format($course['price']).' VNĐ' ?></div>
-      <div class="btn-dk"><a href="#">ĐĂNG KÝ HỌC</a></div>
+      <div class="btn-dk"><a href="./membership.php">ĐĂNG KÝ HỌC</a></div>
       <div class="gioithieu">
         <div class="thoiluong">Trình độ cơ bản</div>
         <div class="thoiluong">Tổng số <span><?= count($videos) ?></span> bài học</div>
