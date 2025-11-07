@@ -7,8 +7,8 @@ html {
   font-family: Arial, Helvetica, sans-serif;
 }
 #main {
-  background: radial-gradient(125% 125% at 50% 10%, #ede2e9 40%, #7c3aed 100%);
   height: 2000px;
+  background: linear-gradient(135deg, #f0f6ba, #e2cff6);
 }
 
 #header .nav-login {
@@ -525,6 +525,8 @@ textarea {
 /* CSS PRODUCT COURSE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   */
 #product {
   position: relative;
+  background: linear-gradient(135deg, #c8d0f4, #e2cff6);
+  padding-bottom: 50vh;
 }
 #product .header-login {
   height: 40px;
@@ -680,6 +682,9 @@ textarea {
 #product .xemthem a:hover {
   color: #03451d;
 }
+#product .btn-thoat a {
+  margin-left: -170vh;
+}
 
 /* CSS HIỂN THI GIAO DIỆN HỌC  */
 #product-course {
@@ -829,4 +834,163 @@ textarea {
   margin-left: -75vh;
   color: white;
   margin-top: 5px;
+}
+
+/* ADD VIDEO */
+/* ===========================
+   FORM ADD VIDEO - GIAO DIỆN VĂN PHÒNG HIỆN ĐẠI
+   Không sửa HTML - Viết CSS scoped bằng #add-video
+   =========================== */
+
+#add-video {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #f4f6fa;
+  height: 800px;
+  width: 100%;
+  align-items: flex-start;
+
+  box-sizing: border-box;
+  background: radial-gradient(circle, #8cd9d3, #81cf9f);
+  padding-top: 18vh;
+}
+
+#add-video .box {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  padding: 30px 40px;
+  width: 100%;
+  max-width: 650px;
+  border: 1px solid #e6e9ef;
+  margin: 0 auto;
+}
+
+#add-video .text {
+  text-align: center;
+  margin-bottom: 25px;
+  height: 40px;
+  border-radius: 0.25rem;
+  background-color: #007bff;
+}
+
+#add-video .text h2 {
+  font-size: 30px;
+  color: #fbfbfb;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  border-bottom: 1px solid #0f6efd;
+  display: inline-block;
+  padding-bottom: 6px;
+  text-align: center;
+}
+
+/* Form Layout */
+#add-video form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Input Group */
+#add-video .input-box {
+  display: flex;
+}
+
+#add-video .input-box label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #444b5a;
+  margin-bottom: 6px;
+}
+
+#add-video .input-box input[type="text"],
+#add-video .input-box input[type="number"],
+#add-video .input-box select,
+#add-video .input-box textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background-color: #fff;
+  font-size: 15px;
+  color: #1a1a1a;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+#add-video .input-box input:focus,
+#add-video .input-box textarea:focus,
+#add-video .input-box select:focus {
+  outline: none;
+  border-color: #0f6efd;
+  box-shadow: 0 0 0 3px rgba(15, 110, 253, 0.15);
+}
+
+#add-video .input-box textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Checkbox */
+#add-video .input-box input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 8px;
+  accent-color: #0f6efd;
+}
+
+#add-video .input-box label input[type="checkbox"] + span {
+  color: #444b5a;
+}
+
+/* Nút bấm */
+#add-video .btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+#add-video .btn button {
+  background: #0f6efd;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+}
+
+#add-video .btn button:hover {
+  background: #0d5de3;
+  box-shadow: 0 4px 12px rgba(15, 110, 253, 0.25);
+}
+
+#add-video .btn button:active {
+  transform: translateY(1px);
+}
+
+/* Hiển thị lỗi */
+#add-video p[style*="color:red"] {
+  background: #ffe9e9;
+  color: #c62828 !important;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #add-video .box {
+    padding: 25px 20px;
+  }
+  #add-video .text h2 {
+    font-size: 18px;
+  }
+}
+#add-video .text-dk-tv {
+  color: #007bff;
+}
+#video .container-dk-tv {
+  margin-top: 30px;
 }
